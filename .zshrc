@@ -131,4 +131,5 @@ export PATH=$PATH:$HOME/go/bin/
 alias ctags=/usr/local/bin/ctags
 
 # go
+export GOROOT=/usr/local/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
