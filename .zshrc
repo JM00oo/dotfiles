@@ -130,5 +130,5 @@ export PATH=$PATH:$HOME/go/bin/
 #
 alias ctags=/usr/local/bin/ctags
 
-[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
+# go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
