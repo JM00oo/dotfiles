@@ -100,7 +100,6 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey '^l' autosuggest-accept
 bindkey '\ea' beginning-of-line
-source ~/.gvm/scripts/gvm
 
 # auto jump
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
