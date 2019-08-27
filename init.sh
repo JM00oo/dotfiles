@@ -15,5 +15,15 @@ curl -fLo ~/.vimrc https://raw.githubusercontent.com/JM00oo/dotfiles/master/.vim
 # install zshrc
 curl -fLo ~/.zshrc https://raw.githubusercontent.com/JM00oo/dotfiles/master/.zshrc
 
+# install zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# install zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 # insetall nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+
+# install autojump
+git clone git://github.com/wting/autojump.git
+cd autojump && ./install.py
