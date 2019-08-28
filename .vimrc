@@ -42,6 +42,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 " let g:UltiSnipsExpandTrigger="<tab>"
 " let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -96,3 +97,9 @@ cnoreabbrev b Buffers
 cnoreabbrev gg Ggrep
 highlight ColorColumn ctermbg=gray
 set colorcolumn=80
+
+" gitgutter
+set updatetime=100
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
