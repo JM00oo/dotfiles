@@ -44,31 +44,25 @@ Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" If you want :UltiSnipsEdit to split your window.
-" let g:UltiSnipsEditSplit="vertical"
+" Common
+set incsearch
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+set list listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+set clipboard=unnamed
+set langmenu=en_US
+let $LANG = 'en_US'
+set hls
+cnoreabbrev b Buffers
+cnoreabbrev gg Ggrep
+highlight ColorColumn ctermbg=gray
+set colorcolumn=80
+
+" NERDTree
 let NERDTreeMapActivateNode='<space>'
 nmap <C-\> :NERDTreeToggle<CR>
 vmap <Leader>c :TComment<CR>
 nmap <Leader>c :TComment<CR>
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-set list listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
-set clipboard=unnamed
-" vim-syntastic/syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_javascript_checkers = ['eslint']
-" let g:syntastic_javascript_eslint_exe = 'npm run lint --'
-" set autoread
-" autocmd BufWritePost *.js Autofix
-"
 
 " vim-markdown
 let vim_markdown_preview_hotkey='<C-m>'
@@ -85,17 +79,7 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
-" let g:ale_set_highlights = 0
 highlight clear ALEError
-" highlight ALEError ctermbg=none cterm=underline
-set langmenu=en_US
-let $LANG = 'en_US'
-set hls
-
-cnoreabbrev b Buffers
-cnoreabbrev gg Ggrep
-highlight ColorColumn ctermbg=gray
-set colorcolumn=80
 
 " gitgutter
 set updatetime=100
