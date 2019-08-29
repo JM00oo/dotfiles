@@ -71,3 +71,7 @@ set signcolumn=yes
 highlight GitGutterAdd    guifg=#009900 ctermfg=2
 highlight GitGutterChange guifg=#bbbb00 ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+
+" ctrl p
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|)|_env|node_modules$'
