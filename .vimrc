@@ -44,6 +44,7 @@ cnoreabbrev gg Ggrep
 
 " NERDTree
 let NERDTreeMapActivateNode='<space>'
+let NERDTreeShowHidden=1
 nmap <C-\> :NERDTreeToggle<CR>
 vmap <Leader>c :TComment<CR>
 nmap <Leader>c :TComment<CR>
