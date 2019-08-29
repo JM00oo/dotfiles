@@ -2,37 +2,21 @@
 set encoding=utf-8
 set backspace=indent,eol,start
 
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
-" - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-" Make sure you use single quotes
-
-" On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/ervandew/supertab'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
-" Plug 'davidhalter/jedi-vim'
 Plug 'lepture/vim-jinja'
 Plug 'soramugi/auto-ctags.vim'
-" Track the engine.
-" Plug 'SirVer/ultisnips'
 Plug 'jasontbradshaw/pigeon.vim'
-" Plug 'felixSchl/vim-gh-preview'
-" Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
-" Initialize plugin system
 Plug 'tomlion/vim-solidity'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -51,12 +35,12 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set list listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set clipboard=unnamed
 set langmenu=en_US
-let $LANG = 'en_US'
+set colorcolumn=80
 set hls
+highlight ColorColumn ctermbg=gray
+let $LANG = 'en_US'
 cnoreabbrev b Buffers
 cnoreabbrev gg Ggrep
-highlight ColorColumn ctermbg=gray
-set colorcolumn=80
 
 " NERDTree
 let NERDTreeMapActivateNode='<space>'
