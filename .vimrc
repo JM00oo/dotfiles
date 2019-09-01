@@ -27,6 +27,7 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 " Common
@@ -76,3 +77,6 @@ highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 " ctrl p
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|)|_env|node_modules$'
+
+" YCM
+set completeopt-=preview
