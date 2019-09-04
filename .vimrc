@@ -28,6 +28,9 @@ Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'Valloric/YouCompleteMe'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 call plug#end()
 
 " Common
@@ -54,19 +57,6 @@ nmap <Leader>c :TComment<CR>
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_github=1
 
-" ale config
-let g:ale_fixers = {
-\   '*': [
-\         'remove_trailing_lines',
-\         'trim_whitespace',
-\   ],
-\   'javascript': ['eslint'],
-\   'typescript': ['tslint'],
-\}
-let g:ale_fix_on_save = 1
-let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
-highlight clear ALEError
-
 " gitgutter
 set updatetime=100
 set signcolumn=yes
@@ -80,3 +70,6 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|)|_env|node_modules$'
 
 " YCM
 set completeopt-=preview
+" prettier
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
