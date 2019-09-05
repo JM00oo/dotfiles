@@ -31,6 +31,9 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'nvie/vim-flake8'
+Plug 'tell-k/vim-autopep8'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " Common
@@ -39,7 +42,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set list listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set clipboard=unnamed
 set langmenu=en_US
-set colorcolumn=80
+" set colorcolumn=80
 set hls
 highlight ColorColumn ctermbg=gray
 let $LANG = 'en_US'
@@ -70,6 +73,28 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|)|_env|node_modules$'
 
 " YCM
 set completeopt-=preview
+
 " prettier
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
+
+" flake8
+let python_highlight_all=1
+syntax on
+
+" autopep8
+let g:autopep8_disable_show_diff=1
+let g:autopep8_on_save=1
+
+" python
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
+
+" indentLine
+let g:indentLine_color_term = 1
