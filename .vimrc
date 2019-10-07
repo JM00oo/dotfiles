@@ -12,7 +12,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/ervandew/supertab'
 Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-fugitive'
 Plug 'lepture/vim-jinja'
 Plug 'soramugi/auto-ctags.vim'
 Plug 'jasontbradshaw/pigeon.vim'
@@ -20,7 +19,7 @@ Plug 'honza/vim-snippets'
 Plug 'tomlion/vim-solidity'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'zpieslak/vim-autofix'
 Plug 'tpope/vim-fugitive'
 Plug 'JamshedVesuna/vim-markdown-preview'
@@ -34,12 +33,14 @@ Plug 'prettier/vim-prettier', {
 Plug 'nvie/vim-flake8'
 Plug 'tell-k/vim-autopep8'
 Plug 'Yggdroot/indentLine'
+" Plug 'ryanoasis/vim-devicons'
+Plug 'alvan/vim-closetag'
+Plug 'Quramy/tsuquyomi'
 call plug#end()
 
 " Common
 set incsearch
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-set list listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+" set list listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set clipboard=unnamed
 set langmenu=en_US
 " set colorcolumn=80
@@ -68,8 +69,9 @@ highlight GitGutterChange guifg=#bbbb00 ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 
 " ctrl p
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|)|_env|node_modules$'
+" set runtimepath^=~/.vim/bundle/ctrlp.vim
+" let g:ctrlp_cmd = 'CtrlPMRU'
+" let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|)|_env|node_modules$'
 
 " YCM
 set completeopt-=preview
@@ -86,6 +88,9 @@ syntax on
 let g:autopep8_disable_show_diff=1
 let g:autopep8_on_save=1
 
+" go template syntax 
+au BufNewFile,BufRead *.gotmpl set filetype=gohtmltmpl
+
 " python
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -95,6 +100,20 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix |
+    \ let b:indentLine_enabled=1 |
+
 
 " indentLine
-let g:indentLine_color_term = 1
+let g:indentLine_enabled = 0
+let g:indentLine_color_term = 2
+
+" FZF
+nmap <C-p> :FZF<CR>
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
+" vim-closetag
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
+let g:closetag_filetypes = 'html,xhtml,phtml'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx,js'
+let g:closetag_shortcut = '>'
+let g:closetag_close_shortcut = '<leader>>'
